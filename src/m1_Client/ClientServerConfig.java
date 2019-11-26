@@ -1,5 +1,6 @@
 package m1_Client;
 
+import m1_server.ServerConfig;
 import m2.Component;
 import m2.Configuration;
 import m2.Connector;

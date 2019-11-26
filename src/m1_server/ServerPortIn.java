@@ -1,4 +1,4 @@
-package m1_Client;
+package m1_server;
 
 import m2.PortIn;
 
