@@ -1,5 +1,5 @@
 package m2;
 
-public class PortIn implements Service {
+public abstract class PortIn implements Service {
 
 }

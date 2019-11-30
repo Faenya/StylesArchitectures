@@ -1,5 +1,5 @@
 package m2;
 
-public class RuleIn {
+public abstract class RuleIn {
 
 }

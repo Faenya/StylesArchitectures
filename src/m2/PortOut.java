@@ -1,5 +1,5 @@
 package m2;
 
-public class PortOut implements Service {
+public abstract class PortOut implements Service {
 
 }

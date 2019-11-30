@@ -1,5 +1,5 @@
 package m2;
 
-public class RuleOut {
+public abstract class RuleOut {
 
 }
