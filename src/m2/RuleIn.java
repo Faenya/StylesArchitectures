@@ -1,5 +1,7 @@
 package m2;
 
-public abstract class RuleIn {
+import java.util.Observable;
+
+public abstract class RuleIn extends Observable {
 
 }

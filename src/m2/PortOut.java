@@ -1,5 +1,7 @@
 package m2;
 
-public abstract class PortOut implements Service {
+import java.util.Observable;
+
+public abstract class PortOut extends Observable implements Service {
 
 }

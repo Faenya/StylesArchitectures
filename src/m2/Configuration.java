@@ -1,6 +1,9 @@
 package m2;
 
-public abstract class Configuration {
+import java.util.Observable;
+import java.util.Observer;
+
+public abstract class Configuration extends Observable implements Observer {
 	
 	protected Connector[] connectors;
 	protected Component[] components;

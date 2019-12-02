@@ -1,5 +1,7 @@
 package m2;
 
-public abstract class RuleOut {
+import java.util.Observable;
+
+public abstract class RuleOut extends Observable {
 
 }

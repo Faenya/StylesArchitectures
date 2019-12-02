@@ -1,6 +1,9 @@
 package m2;
 
-public abstract class Component {
+import java.util.Observable;
+import java.util.Observer;
+
+public abstract class Component extends Observable implements Observer {
 
 	protected PortIn[] portsIn;
 	protected PortOut[] portsOut;

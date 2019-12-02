@@ -1,6 +1,9 @@
 package m2;
 
-public abstract class Connector {
+import java.util.Observable;
+import java.util.Observer;
+
+public abstract class Connector extends Observable implements Observer {
 
 	protected RuleIn[] rulesIn;
 	protected RuleOut[] rulesOut;
