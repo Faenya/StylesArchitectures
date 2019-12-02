@@ -6,7 +6,6 @@ import m1_server.ServerConfig;
 import m2.AttachmentPortOutRuleIn;
 import m2.AttachmentRuleOutPortIn;
 import m2.BindingPortInPortIn;
-import m2.BindingPortOutPortOut;
 import m2.Component;
 import m2.Configuration;
 import m2.Connector;
@@ -22,8 +21,9 @@ public class ClientServerConfig extends Configuration {
 		this.components = new Component[1];
 		this.components[0] = new Client();
 		
-		this.connectors = new Connector[1];
+		this.connectors = new Connector[2];
 		this.connectors[0] = new ConnectorRPC();
+		this.connectors[1] = new ConnectorRPCReturn();
 		
 		this.portsIn = new PortIn[1];
 		this.portsIn[0] = new ClientServerPortIn();
@@ -38,13 +38,14 @@ public class ClientServerConfig extends Configuration {
 		this.portsOut[0].addObserver(this);
 		
 		this.bindingPortInPortIn = new BindingPortInPortIn(this.portsIn[0], this.components[0].getPortsIn()[0]);
-		this.bindingPortOutPortOut = new BindingPortOutPortOut(this.portsOut[0], this.configurations[0].getPortsOut()[0]);
 		
-		this.attachmentsPORI = new AttachmentPortOutRuleIn[1];
+		this.attachmentsPORI = new AttachmentPortOutRuleIn[2];
 		this.attachmentsPORI[0] = new AttachmentPortOutRuleIn(this.components[0].getPortsOut()[0], this.connectors[0].getRuleIn()[0]);
+		this.attachmentsPORI[0] = new AttachmentPortOutRuleIn(this.configurations[0].getPortsOut()[0], this.connectors[1].getRuleIn()[0]);
 		
-		this.attachmentsROPI = new AttachmentRuleOutPortIn[1];
+		this.attachmentsROPI = new AttachmentRuleOutPortIn[2];
 		this.attachmentsROPI[0] = new AttachmentRuleOutPortIn(this.connectors[0].getRuleOut()[0], this.configurations[0].getPortsIn()[0]);
+		this.attachmentsROPI[1] = new AttachmentRuleOutPortIn(this.connectors[1].getRuleOut()[0], this.components[0].getPortsIn()[1]);
 	}
 
 	@Override
