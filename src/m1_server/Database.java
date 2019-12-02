@@ -1,5 +1,7 @@
 package m1_server;
 
+import java.util.Observable;
+
 import m2.Component;
 import m2.PortIn;
 import m2.PortOut;
@@ -14,5 +16,15 @@ public class Database extends Component {
 		this.portsOut = new PortOut[2];
 		this.portsOut[0] = new QueryInterrogationPortOut();
 		this.portsOut[1] = new SecurityManagementPortOut();
+		
+		this.portsIn[0].addObserver(this);
+		this.portsIn[1].addObserver(this);
+		this.portsOut[0].addObserver(this);
+		this.portsOut[1].addObserver(this);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+
 	}
 }

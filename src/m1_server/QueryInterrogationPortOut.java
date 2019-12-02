@@ -4,4 +4,9 @@ import m2.PortOut;
 
 public class QueryInterrogationPortOut extends PortOut {
 
+	@Override
+	public String serviceMethod() {
+		return null;
+	}
+
 }

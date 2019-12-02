@@ -1,5 +1,7 @@
 package m1_server;
 
+import java.util.Observable;
+
 import m2.Component;
 import m2.Connector;
 import m2.PortIn;
@@ -17,5 +19,17 @@ public class ConnectionManager extends Component {
 		this.portsOut[0] = new ExternalSocketOut();
 		this.portsOut[1] = new SecurityCheckPortOut();
 		this.portsOut[2] = new DBQueryPortOut();
+		
+		this.portsIn[0].addObserver(this);
+		this.portsIn[1].addObserver(this);
+		this.portsIn[2].addObserver(this);
+		this.portsOut[0].addObserver(this);
+		this.portsOut[1].addObserver(this);
+		this.portsOut[2].addObserver(this);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		
 	}
 }
