@@ -15,4 +15,9 @@ public abstract class Connector extends Observable implements Observer {
 	public RuleOut[] getRuleOut() {
     return this.rulesOut;
   }
+	
+	protected String glue(String args) {
+    return args;
+	  
+	}
 }

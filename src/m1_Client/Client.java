@@ -12,8 +12,9 @@ public class Client extends Component {
 	private String email;
 
 	public Client() {
-		this.portsIn = new PortIn[1];
+		this.portsIn = new PortIn[2];
 		this.portsIn[0] = new ClientPortIn();
+		this.portsIn[1] = new ClientPortInReturn();
 		
 		this.portsOut = new PortOut[1];
 		this.portsOut[0] = new ClientPortOut();
