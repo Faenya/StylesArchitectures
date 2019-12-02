@@ -4,8 +4,4 @@ import m2.PortIn;
 
 public class SecurityManagementPortIn extends PortIn {
 
-	@Override
-	public void serviceMethod(String args) {
-	}
-
 }

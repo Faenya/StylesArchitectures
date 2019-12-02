@@ -26,12 +26,14 @@ public class Client extends Component {
 	public void login(String email, String password) {
 		this.email = email;
 		this.password = password;
-		this.portsOut[0].serviceMethod("login_"+email+"_"+password);
+		this.portsOut[0].sendMessage("login_"+email+"_"+password);
 	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
-		
+		if(arg0 == this.portsIn[1]) {
+			System.out.println(arg1);
+		}
 	}
 
 	public String getPassword() {

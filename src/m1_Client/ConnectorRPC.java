@@ -23,8 +23,6 @@ public class ConnectorRPC extends Connector {
 	public void update(Observable o, Object arg) {
 		if (o == this.rulesIn[0]) {
 			this.rulesOut[0].sendMessage(arg.toString());
-		} else {
-			
 		}
 	}
 }

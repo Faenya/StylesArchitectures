@@ -47,15 +47,15 @@ public class ServerConfig extends Configuration {
 		this.portsOut[0].addObserver(this);
 		
 		this.bindingPortInPortIn = new BindingPortInPortIn(this.portsIn[0], this.components[0].getPortsIn()[0]);
-		this.bindingPortOutPortOut = new BindingPortOutPortOut(this.portsOut[0], this.components[0].getPortsOut()[0]);
+		this.bindingPortOutPortOut = new BindingPortOutPortOut(this.components[0].getPortsOut()[0], this.portsOut[0]);
 		
 		this.attachmentsPORI = new AttachmentPortOutRuleIn[6];
 		this.attachmentsPORI[0] = new AttachmentPortOutRuleIn(this.components[0].getPortsOut()[2], this.connectors[0].getRuleIn()[0]);
 		this.attachmentsPORI[1] = new AttachmentPortOutRuleIn(this.components[0].getPortsOut()[1], this.connectors[4].getRuleIn()[0]);
-		this.attachmentsPORI[2] = new AttachmentPortOutRuleIn(this.components[1].getPortsOut()[1], this.connectors[5].getRuleIn()[0]);
-		this.attachmentsPORI[3] = new AttachmentPortOutRuleIn(this.components[1].getPortsOut()[0], this.connectors[3].getRuleIn()[0]);
-		this.attachmentsPORI[4] = new AttachmentPortOutRuleIn(this.components[2].getPortsOut()[1], this.connectors[2].getRuleIn()[0]);
-		this.attachmentsPORI[5] = new AttachmentPortOutRuleIn(this.components[2].getPortsOut()[0], this.connectors[1].getRuleIn()[0]);
+		this.attachmentsPORI[2] = new AttachmentPortOutRuleIn(this.components[1].getPortsOut()[1], this.connectors[2].getRuleIn()[0]);
+		this.attachmentsPORI[3] = new AttachmentPortOutRuleIn(this.components[1].getPortsOut()[0], this.connectors[1].getRuleIn()[0]);
+		this.attachmentsPORI[4] = new AttachmentPortOutRuleIn(this.components[2].getPortsOut()[1], this.connectors[5].getRuleIn()[0]);
+		this.attachmentsPORI[5] = new AttachmentPortOutRuleIn(this.components[2].getPortsOut()[0], this.connectors[3].getRuleIn()[0]);
 		
 		this.attachmentsROPI = new AttachmentRuleOutPortIn[6];
 		this.attachmentsROPI[0] = new AttachmentRuleOutPortIn(this.connectors[0].getRuleOut()[0], this.components[1].getPortsIn()[0]);
@@ -68,13 +68,6 @@ public class ServerConfig extends Configuration {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		if (o == this.portsIn[0]) {
-			System.out.println("SERVER recieved :");
-			System.out.println(arg);
-			String[] splitString = arg.toString().split("_");
-			if(splitString[0].equals("login")) {
-				//this.portsOut[0].serviceMethod("Connection OK");
-			}
-		}
+		
 	}
 }

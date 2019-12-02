@@ -7,5 +7,4 @@ public class Main {
 		ClientServerConfig clientServerConfig = new ClientServerConfig();
 		((Client)clientServerConfig.getComponent(0)).login("bob@gmail.com", "password");
 	}
-
 }

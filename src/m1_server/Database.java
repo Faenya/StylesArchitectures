@@ -25,6 +25,10 @@ public class Database extends Component {
 
 	@Override
 	public void update(Observable o, Object arg) {
-
+		if(o == this.portsIn[0]) {
+			if(arg.toString().equals("Access granted")) {
+				this.portsOut[0].sendMessage("Name: Bob\nMessages: 3 unread messages\nCity: Nantes");
+			}
+		}
 	}
 }

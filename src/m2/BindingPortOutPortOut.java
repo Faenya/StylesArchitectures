@@ -1,6 +1,9 @@
 package m2;
 
-public class BindingPortOutPortOut {
+import java.util.Observable;
+import java.util.Observer;
+
+public class BindingPortOutPortOut implements Observer {
 
   protected PortOut portOutComp;
   protected PortOut portOutConf;
@@ -8,5 +11,13 @@ public class BindingPortOutPortOut {
   public BindingPortOutPortOut(PortOut portOutComp, PortOut portOutConf) {
     this.portOutComp = portOutComp;
     this.portOutConf = portOutConf;
+    
+    this.portOutComp.addObserver(this);
   }
+
+	@Override
+	public void update(Observable o, Object arg) {
+		System.out.println("OUT"+arg);
+		this.portOutConf.sendMessage(arg.toString());
+	}
 }

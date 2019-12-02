@@ -30,6 +30,15 @@ public class ConnectionManager extends Component {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		
+		if(o == this.portsIn[0]) {
+			System.out.println("0");
+			this.portsOut[1].sendMessage(arg.toString());
+		} else if(o == portsIn[1]) {
+			System.out.println("1");
+			this.portsOut[2].sendMessage(arg.toString());
+		} else if(o == portsIn[2]) {
+			System.out.println("2");
+			this.portsOut[0].sendMessage(arg.toString());
+		}
 	}
 }
