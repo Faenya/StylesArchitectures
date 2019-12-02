@@ -25,8 +25,7 @@ public class Client extends Component {
 	public void login(String email, String password) {
 		this.email = email;
 		this.password = password;
-		
-		this.notifyObservers("login");
+		this.portsOut[0].serviceMethod("login_"+email+"_"+password);
 	}
 
 	@Override

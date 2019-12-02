@@ -5,8 +5,6 @@ import m2.PortIn;
 public class CheckQueryPortIn extends PortIn {
 
 	@Override
-	public String serviceMethod() {
-		return null;
+	public void serviceMethod(String args) {
 	}
-
 }

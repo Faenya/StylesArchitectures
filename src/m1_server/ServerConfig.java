@@ -68,6 +68,13 @@ public class ServerConfig extends Configuration {
 
 	@Override
 	public void update(Observable o, Object arg) {
-
+		if (o == this.portsIn[0]) {
+			System.out.println("SERVER recieved :");
+			System.out.println(arg);
+			String[] splitString = arg.toString().split("_");
+			if(splitString[0].equals("login")) {
+				//this.portsOut[0].serviceMethod("Connection OK");
+			}
+		}
 	}
 }

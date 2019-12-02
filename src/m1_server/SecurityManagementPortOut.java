@@ -5,8 +5,7 @@ import m2.PortOut;
 public class SecurityManagementPortOut extends PortOut {
 
 	@Override
-	public String serviceMethod() {
-		return null;
+	public void serviceMethod(String args) {
 	}
 
 }

@@ -2,6 +2,6 @@ package m2;
 
 public interface Service {
   
-  public String serviceMethod();
+  public void serviceMethod(String args);
 
 }
