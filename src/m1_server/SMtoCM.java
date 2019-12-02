@@ -16,7 +16,6 @@ public class SMtoCM extends Connector {
 		this.rulesOut[0] = new RuleOutSMtoCM();
 		
 		this.rulesIn[0].addObserver(this);
-		this.rulesOut[0].addObserver(this);
 	}
 
 	@Override

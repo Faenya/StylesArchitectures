@@ -16,7 +16,6 @@ public class DBtoCM extends Connector {
 		this.rulesOut[0] = new RuleOutDBtoCM();
 		
 		this.rulesIn[0].addObserver(this);
-		this.rulesOut[0].addObserver(this);
 	}
 
 	@Override

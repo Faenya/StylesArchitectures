@@ -35,7 +35,6 @@ public class ClientServerConfig extends Configuration {
 		this.components[0].addObserver(this);
 		this.connectors[0].addObserver(this);
 		this.portsIn[0].addObserver(this);
-		this.portsOut[0].addObserver(this);
 		
 		this.bindingPortInPortIn = new BindingPortInPortIn(this.portsIn[0], this.components[0].getPortsIn()[0]);
 		
@@ -50,13 +49,7 @@ public class ClientServerConfig extends Configuration {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		if (o == this.components[0]) {
-			if (arg.equals("login")) {
-				String email = ((Client)this.components[0]).getEmail();
-				String password = ((Client)this.components[0]).getPassword();
-				
-			}
-		}
+		
 	}
 	
 	public Component getComponent(int i) {

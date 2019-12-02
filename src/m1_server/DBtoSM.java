@@ -16,7 +16,6 @@ public class DBtoSM extends Connector {
 		this.rulesOut[0] = new RuleOutDBtoSM();
 		
 		this.rulesIn[0].addObserver(this);
-		this.rulesOut[0].addObserver(this);
 	}
 
 	@Override

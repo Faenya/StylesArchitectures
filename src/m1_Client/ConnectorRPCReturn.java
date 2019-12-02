@@ -15,6 +15,7 @@ public class ConnectorRPCReturn extends Connector {
     this.rulesOut = new RuleOut[1];
     this.rulesOut[0] = new RuleOutRPCReturn();
     
+    this.rulesIn[0].addObserver(this);
   }
 
 	@Override

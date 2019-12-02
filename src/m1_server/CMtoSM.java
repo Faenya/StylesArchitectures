@@ -16,7 +16,6 @@ public class CMtoSM extends Connector {
 		this.rulesOut[0] = new RuleOutCMtoSM();
 		
 		this.rulesIn[0].addObserver(this);
-		this.rulesOut[0].addObserver(this);
 	}
 
 	@Override

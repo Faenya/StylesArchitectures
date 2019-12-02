@@ -16,7 +16,6 @@ public class ConnectorRPC extends Connector {
 		this.rulesOut[0] = new RuleOutRPC();
 		
 		this.rulesIn[0].addObserver(this);
-		this.rulesOut[0].addObserver(this);
 	}
 
 	@Override

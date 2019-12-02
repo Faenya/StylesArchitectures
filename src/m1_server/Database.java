@@ -19,8 +19,6 @@ public class Database extends Component {
 		
 		this.portsIn[0].addObserver(this);
 		this.portsIn[1].addObserver(this);
-		this.portsOut[0].addObserver(this);
-		this.portsOut[1].addObserver(this);
 	}
 
 	@Override

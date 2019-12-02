@@ -20,7 +20,7 @@ public class Client extends Component {
 		this.portsOut[0] = new ClientPortOut();
 		
 		this.portsIn[0].addObserver(this);
-		this.portsOut[0].addObserver(this);
+		this.portsIn[1].addObserver(this);
 	}
 	
 	public void login(String email, String password) {
@@ -32,6 +32,7 @@ public class Client extends Component {
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		if(arg0 == this.portsIn[1]) {
+			//result from server
 			System.out.println(arg1);
 		}
 	}

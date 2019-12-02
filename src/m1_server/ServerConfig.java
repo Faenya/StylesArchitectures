@@ -44,7 +44,6 @@ public class ServerConfig extends Configuration {
 		this.connectors[4].addObserver(this);
 		this.connectors[5].addObserver(this);
 		this.portsIn[0].addObserver(this);
-		this.portsOut[0].addObserver(this);
 		
 		this.bindingPortInPortIn = new BindingPortInPortIn(this.portsIn[0], this.components[0].getPortsIn()[0]);
 		this.bindingPortOutPortOut = new BindingPortOutPortOut(this.components[0].getPortsOut()[0], this.portsOut[0]);

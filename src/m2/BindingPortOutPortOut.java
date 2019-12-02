@@ -17,7 +17,6 @@ public class BindingPortOutPortOut implements Observer {
 
 	@Override
 	public void update(Observable o, Object arg) {
-		System.out.println("OUT"+arg);
 		this.portOutConf.sendMessage(arg.toString());
 	}
 }

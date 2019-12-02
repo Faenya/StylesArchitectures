@@ -16,7 +16,6 @@ public class SMtoDB extends Connector {
 		this.rulesOut[0] = new RuleOutSMtoDB();
 		
 		this.rulesIn[0].addObserver(this);
-		this.rulesOut[0].addObserver(this);
 	}
 
 	@Override
