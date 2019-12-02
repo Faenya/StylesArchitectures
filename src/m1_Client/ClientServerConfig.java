@@ -1,5 +1,7 @@
 package m1_Client;
 
+import java.util.Observable;
+
 import m1_server.ServerConfig;
 import m2.AttachmentPortOutRuleIn;
 import m2.AttachmentRuleOutPortIn;
@@ -29,6 +31,12 @@ public class ClientServerConfig extends Configuration {
 		this.portsOut = new PortOut[1];
 		this.portsOut[0] = new ClientServerPortOut();
 		
+		this.configurations[0].addObserver(this);
+		this.components[0].addObserver(this);
+		this.connectors[0].addObserver(this);
+		this.portsIn[0].addObserver(this);
+		this.portsOut[0].addObserver(this);
+		
 		this.bindingPortInPortIn = new BindingPortInPortIn(this.portsIn[0], this.components[0].getPortsIn()[0]);
 		this.bindingPortOutPortOut = new BindingPortOutPortOut(this.portsOut[0], this.configurations[0].getPortsOut()[0]);
 		
@@ -37,5 +45,10 @@ public class ClientServerConfig extends Configuration {
 		
 		this.attachmentsROPI = new AttachmentRuleOutPortIn[1];
 		this.attachmentsROPI[0] = new AttachmentRuleOutPortIn(this.connectors[0].getRuleOut()[0], this.configurations[0].getPortsIn()[0]);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+		
 	}
 }
