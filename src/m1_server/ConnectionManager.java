@@ -10,12 +10,12 @@ public class ConnectionManager extends Component {
 	public ConnectionManager() {
 		this.portsIn = new PortIn[3];
 		this.portsIn[0] = new ExternalSocketIn();
-		this.portsIn[0] = new SecurityCheckPortIn();
-		this.portsIn[0] = new DBQueryPortIn();
+		this.portsIn[1] = new SecurityCheckPortIn();
+		this.portsIn[2] = new DBQueryPortIn();
 		
 		this.portsOut = new PortOut[3];
 		this.portsOut[0] = new ExternalSocketOut();
-		this.portsOut[0] = new SecurityCheckPortOut();
-		this.portsOut[0] = new DBQueryPortOut();
+		this.portsOut[1] = new SecurityCheckPortOut();
+		this.portsOut[2] = new DBQueryPortOut();
 	}
 }
