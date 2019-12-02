@@ -8,6 +8,9 @@ import m2.PortOut;
 
 public class Client extends Component {
 	
+	private String password;
+	private String email;
+
 	public Client() {
 		this.portsIn = new PortIn[1];
 		this.portsIn[0] = new ClientPortIn();
@@ -18,9 +21,24 @@ public class Client extends Component {
 		this.portsIn[0].addObserver(this);
 		this.portsOut[0].addObserver(this);
 	}
+	
+	public void login(String email, String password) {
+		this.email = email;
+		this.password = password;
+		
+		this.notifyObservers("login");
+	}
 
 	@Override
 	public void update(Observable arg0, Object arg1) {
 		
+	}
+
+	public String getPassword() {
+		return password;
+	}
+
+	public String getEmail() {
+		return email;
 	}
 }

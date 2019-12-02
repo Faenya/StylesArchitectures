@@ -4,4 +4,9 @@ import m2.PortIn;
 
 public class DBQueryPortIn extends PortIn {
 
+	@Override
+	public String serviceMethod() {
+		return null;
+	}
+
 }

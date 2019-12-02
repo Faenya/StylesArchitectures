@@ -1,5 +1,7 @@
 package m1_server;
 
+import java.util.Observable;
+
 import m2.AttachmentPortOutRuleIn;
 import m2.AttachmentRuleOutPortIn;
 import m2.BindingPortInPortIn;
@@ -32,6 +34,18 @@ public class ServerConfig extends Configuration {
 		this.portsOut = new PortOut[1];
 		this.portsOut[0] = new ServerPortOut();
 		
+		this.components[0].addObserver(this);
+		this.components[1].addObserver(this);
+		this.components[2].addObserver(this);
+		this.connectors[0].addObserver(this);
+		this.connectors[1].addObserver(this);
+		this.connectors[2].addObserver(this);
+		this.connectors[3].addObserver(this);
+		this.connectors[4].addObserver(this);
+		this.connectors[5].addObserver(this);
+		this.portsIn[0].addObserver(this);
+		this.portsOut[0].addObserver(this);
+		
 		this.bindingPortInPortIn = new BindingPortInPortIn(this.portsIn[0], this.components[0].getPortsIn()[0]);
 		this.bindingPortOutPortOut = new BindingPortOutPortOut(this.portsOut[0], this.components[0].getPortsOut()[0]);
 		
@@ -43,15 +57,17 @@ public class ServerConfig extends Configuration {
 		this.attachmentsPORI[4] = new AttachmentPortOutRuleIn(this.components[2].getPortsOut()[1], this.connectors[2].getRuleIn()[0]);
 		this.attachmentsPORI[5] = new AttachmentPortOutRuleIn(this.components[2].getPortsOut()[0], this.connectors[1].getRuleIn()[0]);
 		
-		
 		this.attachmentsROPI = new AttachmentRuleOutPortIn[6];
 		this.attachmentsROPI[0] = new AttachmentRuleOutPortIn(this.connectors[0].getRuleOut()[0], this.components[1].getPortsIn()[0]);
-    this.attachmentsROPI[1] = new AttachmentRuleOutPortIn(this.connectors[1].getRuleOut()[0], this.components[0].getPortsIn()[2]);
-    this.attachmentsROPI[2] = new AttachmentRuleOutPortIn(this.connectors[2].getRuleOut()[0], this.components[1].getPortsIn()[1]);
-    this.attachmentsROPI[3] = new AttachmentRuleOutPortIn(this.connectors[3].getRuleOut()[0], this.components[2].getPortsIn()[0]);
-    this.attachmentsROPI[4] = new AttachmentRuleOutPortIn(this.connectors[4].getRuleOut()[0], this.components[2].getPortsIn()[1]);
-    this.attachmentsROPI[5] = new AttachmentRuleOutPortIn(this.connectors[5].getRuleOut()[0], this.components[0].getPortsIn()[1]);
-		
-		
+	    this.attachmentsROPI[1] = new AttachmentRuleOutPortIn(this.connectors[1].getRuleOut()[0], this.components[0].getPortsIn()[2]);
+	    this.attachmentsROPI[2] = new AttachmentRuleOutPortIn(this.connectors[2].getRuleOut()[0], this.components[1].getPortsIn()[1]);
+	    this.attachmentsROPI[3] = new AttachmentRuleOutPortIn(this.connectors[3].getRuleOut()[0], this.components[2].getPortsIn()[0]);
+	    this.attachmentsROPI[4] = new AttachmentRuleOutPortIn(this.connectors[4].getRuleOut()[0], this.components[2].getPortsIn()[1]);
+	    this.attachmentsROPI[5] = new AttachmentRuleOutPortIn(this.connectors[5].getRuleOut()[0], this.components[0].getPortsIn()[1]);
+	}
+
+	@Override
+	public void update(Observable o, Object arg) {
+
 	}
 }
