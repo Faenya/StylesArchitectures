@@ -35,11 +35,22 @@ public class ServerConfig extends Configuration {
 		this.bindingPortInPortIn = new BindingPortInPortIn(this.portsIn[0], this.components[0].getPortsIn()[0]);
 		this.bindingPortOutPortOut = new BindingPortOutPortOut(this.portsOut[0], this.components[0].getPortsOut()[0]);
 		
-		this.attachmentsPORI = new AttachmentPortOutRuleIn[5];
-		//this.attachmentsPORI[0] = new AttachmentPortOutRuleIn(this.components[0].getPortsIn()[])
+		this.attachmentsPORI = new AttachmentPortOutRuleIn[6];
+		this.attachmentsPORI[0] = new AttachmentPortOutRuleIn(this.components[0].getPortsOut()[2], this.connectors[0].getRuleIn()[0]);
+		this.attachmentsPORI[1] = new AttachmentPortOutRuleIn(this.components[0].getPortsOut()[1], this.connectors[4].getRuleIn()[0]);
+		this.attachmentsPORI[2] = new AttachmentPortOutRuleIn(this.components[1].getPortsOut()[1], this.connectors[5].getRuleIn()[0]);
+		this.attachmentsPORI[3] = new AttachmentPortOutRuleIn(this.components[1].getPortsOut()[0], this.connectors[3].getRuleIn()[0]);
+		this.attachmentsPORI[4] = new AttachmentPortOutRuleIn(this.components[2].getPortsOut()[1], this.connectors[2].getRuleIn()[0]);
+		this.attachmentsPORI[5] = new AttachmentPortOutRuleIn(this.components[2].getPortsOut()[0], this.connectors[1].getRuleIn()[0]);
 		
-		this.attachmentsROPI = new AttachmentRuleOutPortIn[5];
 		
+		this.attachmentsROPI = new AttachmentRuleOutPortIn[6];
+		this.attachmentsROPI[0] = new AttachmentRuleOutPortIn(this.connectors[0].getRuleOut()[0], this.components[1].getPortsIn()[0]);
+    this.attachmentsROPI[1] = new AttachmentRuleOutPortIn(this.connectors[1].getRuleOut()[0], this.components[0].getPortsIn()[2]);
+    this.attachmentsROPI[2] = new AttachmentRuleOutPortIn(this.connectors[2].getRuleOut()[0], this.components[1].getPortsIn()[1]);
+    this.attachmentsROPI[3] = new AttachmentRuleOutPortIn(this.connectors[3].getRuleOut()[0], this.components[2].getPortsIn()[0]);
+    this.attachmentsROPI[4] = new AttachmentRuleOutPortIn(this.connectors[4].getRuleOut()[0], this.components[2].getPortsIn()[1]);
+    this.attachmentsROPI[5] = new AttachmentRuleOutPortIn(this.connectors[5].getRuleOut()[0], this.components[0].getPortsIn()[1]);
 		
 		
 	}
