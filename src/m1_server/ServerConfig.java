@@ -1,5 +1,7 @@
 package m1_server;
 
+import m2.AttachmentPortOutRuleIn;
+import m2.AttachmentRuleOutPortIn;
 import m2.BindingPortInPortIn;
 import m2.BindingPortOutPortOut;
 import m2.Component;
@@ -32,5 +34,13 @@ public class ServerConfig extends Configuration {
 		
 		this.bindingPortInPortIn = new BindingPortInPortIn(this.portsIn[0], this.components[0].getPortsIn()[0]);
 		this.bindingPortOutPortOut = new BindingPortOutPortOut(this.portsOut[0], this.components[0].getPortsOut()[0]);
+		
+		this.attachmentsPORI = new AttachmentPortOutRuleIn[5];
+		//this.attachmentsPORI[0] = new AttachmentPortOutRuleIn(this.components[0].getPortsIn()[])
+		
+		this.attachmentsROPI = new AttachmentRuleOutPortIn[5];
+		
+		
+		
 	}
 }
